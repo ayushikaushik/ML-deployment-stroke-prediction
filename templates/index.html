@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h3 style="color:red;">Disclaimer: This was created for deployment practice. DO NOT trust the results!!</h3><hr>
+	<h1 style="background-color:powderblue;text-align:center;">STROKE PREDICTION</h1>
+  <p style="font-family:courier;">According to the World Health Organization (WHO) stroke is the 2nd leading cause of death globally, responsible for approximately 11% of total deaths.
+This dataset is used to predict whether a patient is likely to get stroke based on the input parameters like gender, age, various diseases, and smoking status.</p><hr>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    <label for="gender">Gender:</label>
+    <input type="radio" id="male" name="gender" value="Male">
+	  <label for="male">Male</label>
+	  <input type="radio" id="female" name="gender" value="female">
+	  <label for="female">Female</label>
+    <input type="radio" id="other" name="gender" value="Other">
+    <label for="other">Other</label><br><br>
+
+    <label for="age">Age:</label>
+		<input type="text" id="age" name="age" placeholder="in years"><br><br>
+
+    <label for="Hypertension">Do you have Hypertension (High blood pressure) problem:</label>
+    <input type="radio" id="no" name="Hypertension" value="0">
+    <label for="Hypertension">No</label>
+    <input type="radio" id="yes" name="Hypertension" value="1">
+    <label for="Hypertension">Yes</label><br><br>
+
+    <label for="Disease">Do you have Heart Disease:</label>
+    <input type="radio" id="no" name="Disease" value="0">
+    <label for="Disease">No</label>
+    <input type="radio" id="yes" name="Disease" value="1">
+    <label for="Disease">Yes</label><br><br>
+
+    <label for="marry">Did you marry someone?</label>
+    <input type="radio" id="no" name="marry" value="0">
+    <label for="marry">No</label>
+    <input type="radio" id="yes" name="marry" value="1">
+    <label for="marry">Yes</label><br><br>
+
+    <label for="worktype">Work type:</label>
+    <input type="radio" id="Govt_jov" name="worktype" value="Govt_jov">
+    <label for="worktype">Government job</label>
+    <input type="radio" id="Private" name="worktype" value="Private">
+    <label for="worktype">Private job</label>
+    <input type="radio" id="Self-employed" name="worktype" value="Self-employed">
+    <label for="worktype">Self-employed</label>
+    <input type="radio" id="Never_worked" name="worktype" value="Never_worked">
+    <label for="worktype">Never worked</label>
+    <input type="radio" id="children" name="worktype" value="children">
+    <label for="worktype">Taking care of children</label><br><br>
+
+    <label for="city">Residence type:</label>
+    <input type="radio" id="urban" name="city" value="0">
+    <label for="city">Urban</label>
+    <input type="radio" id="rural" name="city" value="1">
+    <label for="city">Rural</label><br><br>
+
+    <label for="glucose">Average glucose level:</label>
+    <input type="text" id="glucose" name="glucose">
+
+    <label for="bmi">BMI:</label>
+    <input type="text" id="bmi" name="bmi"><br><br>
+
+    <label for="smoking">Smoking status:</label>
+    <input type="radio" id="formerly smoked" name="smoking" value="formerly smoked">
+    <label for="smoking">formerly smoked</label>
+    <input type="radio" id="never smoked" name="smoking" value="never smoked">
+    <label for="smoking">never smoked</label>
+    <input type="radio" id="smokes" name="smoking" value="smokes">
+    <label for="smoking">Smokes</label>
+    <input type="radio" id="Unknown" name="smoking" value="Unknown">
+    <label for="smoking">Unknown</label><br><br>
+    
+    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <h1>{{ result }}</h1>
+
+ </div>
+
+
+</body>
+</html>
