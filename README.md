@@ -5,7 +5,7 @@ AUC-ROC score is 0.82.
 
 I deployed it using Flask and Heroku.
 
-App link: https://strokes-prediction-api.herokuapp.com/predict
+App link: https://strokes-prediction-api.herokuapp.com/
 
-[Click here to see EDA](https://github.com/ayushikaushik/ML-deployment-stroke-prediction/blob/main/EDA.ipynb)
+[Click here to see EDA](https://github.com/ayushikaushik/ML-deployment-stroke-prediction/blob/main/EDA.ipynb)\n\n
 [Click here to see model building](https://github.com/ayushikaushik/ML-deployment-stroke-prediction/blob/main/model.ipynb)
